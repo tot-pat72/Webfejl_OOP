@@ -43,3 +43,25 @@ const gomszab = new Player("gomszab");
 gomszab.play();
 gomszab.getTierlevel();
 console.log(gomszab.getTierlevel())
+
+class Person{
+    constructor(name){
+        this.name = name
+    }
+
+    getName(){
+        return this.name
+    }
+}
+
+class Student extends Person{
+    constructor(school, name){
+        super(name);
+        this.school = school
+    }
+}
+
+const student = new Student("Bolyai", "Géza");
+console.log(student.getName());
+console.log(student.school)
+
