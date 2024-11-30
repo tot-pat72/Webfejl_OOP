@@ -65,3 +65,37 @@ const student = new Student("Bolyai", "Géza");
 console.log(student.getName());
 console.log(student.school)
 
+class Animal {
+    constructor(name){
+        this.name = name
+    }
+    hang(){
+        console.log(`${this.name} hangot ad.`)
+    }
+}
+
+class Bird extends Animal{
+    constructor(name){
+        super(name)
+    }
+    repul(){
+        console.log(`${this.name} repül.`)
+    }
+}
+
+class Mammal extends Animal{
+    constructor(name){
+        super(name)
+    }
+    jar(){
+        console.log(`${this.name} sétál.`)
+    }
+}
+
+const bird = new Bird("Holló");
+bird.hang();
+bird.repul();
+
+const mammal = new Mammal("Mosómedve");
+mammal.hang();
+mammal.jar();
