@@ -44,6 +44,18 @@ gomszab.play();
 gomszab.getTierlevel();
 console.log(gomszab.getTierlevel())
 
+// function Person(name){
+//     this.name = name
+// }
+
+// Person.prototype.getName = function(){
+//     return this.name
+
+// function Student(name, school){
+//     Person.call(this, name);
+//     this.school = school
+// }
+
 class Person{
     constructor(name){
         this.name = name
@@ -64,6 +76,30 @@ class Student extends Person{
 const student = new Student("Bolyai", "Géza");
 console.log(student.getName());
 console.log(student.school)
+
+// function Animal(name){
+//     this.name = name
+// }
+
+// Animal.prototype.hang = function(){
+//     console.log(`${this.name} hangot ad.`)
+// }
+
+// function Bird(name){
+//     Animal.call(this, name)
+// }
+
+// Bird.prototype.repul = function(){
+//     console.log(`${this.name} repül.`)
+// }
+
+// function Mammal(name){
+//     Animal.call(this, name)
+// }
+
+// Mammal.prototype.jar = function(){
+//     console.log(`${this.name} sétál.`)
+// }
 
 class Animal {
     constructor(name){
