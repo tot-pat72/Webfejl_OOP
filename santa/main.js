@@ -44,7 +44,15 @@ document.getElementById('product').addEventListener('submit',function(e){
 * table render
 */
 function initTable(){
-
+    for(let i = 0; companionList.length > i; i++){
+        const list = companionList[i];
+        const companion = new Companion(i, list.firstName, list.lastName, list.area)
+        for(const product of list.products){
+            companion.Product(product)
+        }
+        factory.addmano(companion)
+    }
+    console.log(factory)
    // TODO 6
 }
 

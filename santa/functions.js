@@ -9,6 +9,11 @@ function createRow(companion){
     const tableRow = document.createElement('tr');
     tbody.appendChild(tableRow);
 
+    const name = createCell(tableRow);
+    name.innerHTML = companion.Name();
+
+    const reszleg = createCell(tableRow);
+    reszleg.innerHTML = companion.reszleg
    // TODO 7
 
     const action = createCell(tableRow)
@@ -78,6 +83,8 @@ function addCompanion(form){ //TODO
     const lastNameValue = lastname.value;
     const areaValue = area.value;
     // TODO 6
+    const companion_1 = new Companion(firstNameValue, lastNameValue, areaValue);
+    factory.addmano(companion_1);
 }
 
 /**
