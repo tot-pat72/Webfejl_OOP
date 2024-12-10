@@ -7,6 +7,11 @@ class Factory{
     addmano(mano){
         this.mano_lista.push(mano)
         createRow(mano);
+        const companion_1 = new Companion(Factory.manoId())
+    }
+
+    manoId(){
+        this.mano_lista.length;
     }
    }
    
