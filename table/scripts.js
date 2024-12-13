@@ -58,5 +58,26 @@ function init(){
         person.render(document.getElementById("tbodyId"));
     }
 }
-
 init();
+
+class FormController{
+    #form
+    constructor(form){
+        this.#form = form 
+    }
+    #getInputbyid(id){
+        return this.#form.querySelector('#' + id);
+    }
+    get lastname(){
+        const lastname = this.#getInputbyid("lastname");
+        return lastname.value;
+    }
+    get firstname1(){
+        const firstname1 = this.#getInputbyid("firstname1");
+        return firstname1.value;
+    }
+    get firstname2(){
+        const firstname2 = this.#getInputbyid("firstname2");
+        return firstname2.value;
+    }
+}
