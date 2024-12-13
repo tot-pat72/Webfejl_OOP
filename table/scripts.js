@@ -53,12 +53,23 @@ class Person {
 
 
 function init(){
+    const form = document.getElementById("form");
     for(const pers of array){
         const person = new Person(pers);
         person.render(document.getElementById("tbodyId"));
     }
+    const formcontroller = new FormController(form)
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const obj = {
+            firstname1: formController.firstname1,
+            firstname2: formController.firstname2,
+            lastname: formController.lastname
+        }
+        const person = new Person(obj);
+        person.render(document.getElementById("tbodyId"))
+    })
 }
-init();
 
 class FormController{
     #form
@@ -81,3 +92,4 @@ class FormController{
         return firstname2.value;
     }
 }
+init();
