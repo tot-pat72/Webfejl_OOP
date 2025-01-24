@@ -33,10 +33,10 @@ class ArrayList{
         this.#state[index] = item
         // Aktuális indexxel el akarjuk érni a hozzáadott elemet a példányon keresztül.
         Object.defineProperty(this, index, {
-            get: function(){
+            get: () => {
                 return this.#state[index]
             },
-            set: function(value){
+            set: (value) => {
                 this.#state[index] = value
             },
             // writable: true
