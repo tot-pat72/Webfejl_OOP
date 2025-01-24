@@ -88,3 +88,40 @@ person['a'] = 'Józsi';
 person[0] = 'tojás';
 console.log(person)
  */
+
+class ArrayHtmlElement extends HTMLElement{
+    #tbody
+    constructor(){
+        super();
+    }
+    connectedCallback(){
+        const table = document.createElement('table')
+        this.appendChild(table)
+
+        const thead = document.createElement('thead')
+        table.appendChild(thead)
+
+        this.#tbody = document.createElement('tbody')
+        table.appendChild(this.#tbody)
+    }
+    /**
+     * 
+     * @param {{nev: string, eletkor: Number}} 
+     */
+    addPersonRow(item){
+        const tr = document.createElement('tr')
+        this.#tbody.appendChild(tr)
+
+        const td_1 = document.createElement('td')
+        td_1.innerHTML = item.nev
+        tr.appendChild(td_1)
+
+        const td_2 = document.createElement('td')
+        td_2.innerHTML = item.eletkor
+        tr.appendChild(td_2)
+    }
+}
+customElements.define('array-table', ArrayHtmlElement)
+const ArrayTable = new ArrayHtmlElement()
+document.body.appendChild(ArrayTable)
+ArrayTable.addPersonRow({nev: 'Gábor', eletkor: 45})
