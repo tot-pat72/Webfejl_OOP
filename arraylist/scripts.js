@@ -5,14 +5,16 @@ class ArrayList{
      */
     #lenght
     #state
+    #ArrayTable
 
     get Count(){
         return this.#lenght
     }
 
-    constructor(){
+    constructor(array = undefined){
         this.#lenght = 0;
         this.#state = {};
+        this.#ArrayTable = array;
     }
 
     Contains(item){
@@ -42,6 +44,9 @@ class ArrayList{
             // writable: true
             enumerable: true
         })
+        if(this.#ArrayTable) {
+            this.#ArrayTable.addPersonRow(item)
+        }
         //3. Inkrementáljuk a lenght tulajdonságát.
         this.#lenght++
     }
@@ -125,3 +130,15 @@ customElements.define('array-table', ArrayHtmlElement)
 const ArrayTable = new ArrayHtmlElement()
 document.body.appendChild(ArrayTable)
 ArrayTable.addPersonRow({nev: 'Gábor', eletkor: 45})
+
+const arraylist = new ArrayList(ArrayTable);
+arraylist.Add({nev:"János", eletkor: 88})
+
+const button = document.createElement("button");
+button.innerHTML = "Hozzáadás"
+document.body.appendChild(button)
+
+button.addEventListener("click", () => {
+    const newPerson = {nev: "József", eletkor:101}
+    arraylist.Add(newPerson);
+})
