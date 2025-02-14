@@ -50,5 +50,6 @@ for(const elem of array){
 }
 
 const manager = new Manager(managerArray)
-const deck = new DeckArea('deck');
-const solutionArea = new SolutionArea('solution')
+const deck = new DeckArea('deck', manager);
+const solutionArea = new SolutionArea('solution', manager)
+manager.start()

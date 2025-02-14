@@ -51,7 +51,7 @@ class Manager {
      * 
      * @param {NextCardCallback} callback 
      */
-    setNextCrdCallback(callback){
+    setNextCardCallback(callback){
         this.#nextCardCallback = callback
     }
 
