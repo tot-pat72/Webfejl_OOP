@@ -40,6 +40,15 @@ const array = [
       "right": false
     }
 ]
+/**
+ * @type {Card[]}
+ */
+const managerArray = []
+for(const elem of array){
+    const card = new Card(elem.text, elem.right)
+    managerArray.push(card)
+}
 
+const manager = new Manager(managerArray)
 const deck = new DeckArea('deck');
 const solutionArea = new SolutionArea('solution')
